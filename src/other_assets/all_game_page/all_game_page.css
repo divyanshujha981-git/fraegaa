@@ -1,0 +1,22 @@
+.all_game_page_root_container {
+    position: absolute;
+    top: 9vh;
+    height: 91vh;
+    display: flex;
+    padding: 20px;
+    width: 100%;
+}
+
+.card_container {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+.customLink {
+    text-decoration: none;
+}

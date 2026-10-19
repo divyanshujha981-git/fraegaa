@@ -1,0 +1,139 @@
+.houseBlockContainer {
+    position: absolute;
+    top: 9vh;
+    height: 91vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.connection-line {
+    stroke: #4f46e5;
+    stroke-width: 3;
+}
+
+.imgContainer {
+    position: absolute;
+    top: 9vh;
+    transform: translateY(-9vh);
+    z-index: -2;
+    stroke: 3px solid #1e1e2fd2;
+}
+
+.houseBlockContainer h3 {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+
+.houseBlockContainer canvas {
+    position: absolute;
+    top: 9vh;
+    transform: translateY(-9vh);
+    z-index: -1;
+    stroke: 3px solid #1e1e2fd2;
+}
+
+#button_parent {
+    display: grid;
+    justify-content: space-around;
+    align-content: space-around;
+    row-gap: 50px;
+    column-gap: 50px;
+    margin: auto;
+}
+
+.others {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.others textarea {
+    resize: none;
+}
+.playersInfo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.playersInfo table {
+    width: auto;
+}
+
+
+.others h5 {
+    margin: 0;
+}
+
+
+
+.button {
+    height: 15px;
+    width: 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(30, 30, 47, 0.824);
+}
+
+
+@keyframes buttonAnimation {
+    0% {
+        background-color: rgb(129, 129, 129);
+    }
+    25% {
+        background-color: rgb(234, 53, 53);
+    }
+    50% {
+        background-color: rgb(0, 252, 0);
+    }
+    75% {
+        background-color:  rgb(31, 31, 226);
+    }
+    100% {
+        background-color: yellow;
+    }
+}
+.houseBlockContainer div button:hover{
+    animation-name: buttonAnimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+
+.sticker {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: rgba(30, 30, 47, 0.23);
+}
+
+
+.winnerContainer {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: auto;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+
+#winner {
+    text-align: center;
+    margin: 10;
+}
+
+#winner tr {
+    align-items: center;
+}
