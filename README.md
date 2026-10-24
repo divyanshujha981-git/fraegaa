@@ -28,13 +28,13 @@ Make sure you have the following installed:
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_REPOSITORY_URL
+git clone https://github.com/divyanshujha981-git/gaming-friend
 ```
 
 ### 2. Navigate to the project directory
 
 ```bash
-cd FraeGaa
+cd gaming-friend
 ```
 
 ### 3. Install dependencies
