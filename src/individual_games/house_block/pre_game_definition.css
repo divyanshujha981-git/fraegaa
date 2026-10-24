@@ -1,50 +1,200 @@
-.pregame_container {
-    margin: 15vh auto;
-    overflow-y: auto;
-    aspect-ratio: 3/4;
+.pregame_page {
+    position: absolute;
+    top: 9vh;
+    height: 91vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 24px 16px;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    position: relative;
+    overflow-y: auto;
+    background:
+            radial-gradient(circle at 15% 0%, #e6eaff 0, transparent 45%),
+            radial-gradient(circle at 90% 100%, #ffeede 0, transparent 40%),
+            #f6f7fb;
 }
 
-
-.submit {
-    width: 90%;
-    height: 50px;
-    border: none;
-    border-radius: 5px;
-    font-family: sans-serif;
-    color: white;
-    background-color: #0d6efd;
+/* margin: auto centres the card, and still lets short screens scroll to the top of it */
+.pregame_container {
     margin: auto;
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: rgba(149, 157, 165, 0.25) 0px 8px 32px;
+    color: #1e1e2f;
+}
 
+.pg_head h2 {
+    margin: 0 0 4px;
+    font-size: 24px;
+}
+
+.pg_head p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.65;
+}
+
+.pg_row {
+    display: flex;
+    gap: 14px;
+}
+
+.pg_row .pg_field {
+    flex: 1;
+    min-width: 0;
+}
+
+.pg_field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pg_field > span {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.pg_field small {
+    font-size: 12px;
+    opacity: 0.55;
 }
 
 .pregame_container input {
-    width: 90%;
-    height: 50px;
-    border: 1px solid rgb(58, 58, 58);
-    border-radius: 5px;
-    font-family: sans-serif;
+    width: 100%;
+    height: 46px;
+    box-sizing: border-box;
+    padding: 0 14px;
+    border: 1.5px solid #cfd3e0;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 16px;
+    transition: border-color 0.15s, box-shadow 0.15s;
 }
 
-.submit:hover {
-    background-color: #0267ff;
+.pregame_container input:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18);
 }
 
-.submit:active {
-    background-color: #448fff;
-}
+
+/* ---------- avatar picker ---------- */
 
 .imageCont {
-    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+    gap: 10px;
+}
+
+.avatar_btn {
+    position: relative;
+    aspect-ratio: 1;
+    padding: 6px;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    background: #f1f2f8;
+    cursor: pointer;
+    transition: transform 0.12s, border-color 0.15s, background-color 0.15s;
+}
+
+.avatar_btn img {
+    display: block;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.avatar_btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.avatar_btn.is_selected {
+    border-color: #0d6efd;
+    background: #e7f0ff;
+}
+
+.avatar_btn.is_selected::after {
+    content: '✓';
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #0d6efd;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+}
+
+.avatar_btn:disabled {
+    opacity: 0.3;
+    filter: grayscale(1);
+    cursor: not-allowed;
+}
+
+.avatar_btn:focus-visible {
+    outline: 3px solid #4c6ef5;
+    outline-offset: 2px;
+}
+
+
+/* ---------- submit + errors ---------- */
+
+.pg_error {
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #fff0f0;
+    border: 1px solid #ffc9c9;
+    color: #c92a2a;
+    font-size: 14px;
+}
+
+.submit {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(145deg, #4c6ef5, #15aabf);
+    cursor: pointer;
+    transition: background-color 0.15s, transform 0.12s;
+}
+
+.submit:hover:not(:disabled) {
+    background-color: #0267ff;
+    transform: translateY(-1px);
+}
+
+.submit:active:not(:disabled) {
+    background-color: #448fff;
+    transform: translateY(0);
+}
+
+.submit:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+@media (max-width: 420px) {
+    .pregame_container {
+        padding: 20px;
+    }
+
+    .pg_row {
+        flex-direction: column;
+    }
 }
